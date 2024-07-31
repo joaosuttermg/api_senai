@@ -1,5 +1,4 @@
 package com.api.senai.classes;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -15,32 +14,28 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
- @Data
+@Data
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name = "clientes")
-public class Cliente {
-
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Table(name = "contasBancarias")
+public class ContaBancaria {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
-
-    @Column(nullable = false, unique = true, length = 11)
-    private String cpf;
-
+    private String numeroConta;
+    
+    @Column(nullable = false)
+    private Double saldo;
+    
     @OneToOne
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
-    private Endereco endereco;
+    @JoinColumn(name = "nome")
+    private String dono;
+    
+    @Column(nullable = false)
+    private LocalDate datacriacao;
+    
 
-    @Column(length = 11)
-    private String telefone;
-
-    @Column(unique = true)
-    private String email;
-
-    @Column(name = "data_nascimento")
-    private LocalDate dataNascimento;
+    
 
 }
