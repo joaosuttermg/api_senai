@@ -1,7 +1,6 @@
 package com.api.senai.classes;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.UUID;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,28 +13,43 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+
 @Data
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of = "numConta")
 @Entity
-@Table(name = "contasBancarias")
+@Table(name = "contas_bancarias")
 public class ContaBancaria {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false)
-    private String numeroConta;
+    private Long numConta;
     
     @Column(nullable = false)
-    private Double saldo;
+    private Double saldo = 0.0;
     
     @OneToOne
-    @JoinColumn(name = "nome")
-    private String dono;
+    @JoinColumn(name = "dono_da_conta", referencedColumnName = "id")
+    private Cliente dono;
     
     @Column(nullable = false)
     private LocalDate datacriacao;
-    
 
-    
+    @OneToOne
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
+    private Cliente titular;
+
+    public void depositar(double valor) {
+        saldo += valor;
+    }
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
 
 }
+
+    
+
+    
+    
+
+    
+
+

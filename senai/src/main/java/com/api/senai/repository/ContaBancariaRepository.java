@@ -1,4 +1,4 @@
-package repository2;
+package com.api.senai.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

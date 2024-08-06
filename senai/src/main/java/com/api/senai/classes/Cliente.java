@@ -1,8 +1,7 @@
 package com.api.senai.classes;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.UUID;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
