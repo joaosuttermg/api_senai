@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.senai.classes.ContaBancaria;
 import com.api.senai.classes.Transacao;
-import com.api.senai.repository.ContaBancariaRepository;
+
 import com.api.senai.repository.TransacaoRepository;
 
 @Service

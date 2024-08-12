@@ -1,6 +1,7 @@
 package com.api.senai.classes;
 import java.time.LocalDate;
 
+import org.aspectj.util.GenericSignature.ClassTypeSignature;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,7 +43,7 @@ public class ContaBancaria {
     public void sacar(double valor) {
         saldo -= valor;
     }
-
+    
 }
 
     

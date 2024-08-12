@@ -42,4 +42,14 @@ public class Cliente {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @Column(name = "cliente_ativo")
+    private boolean clienteAtivo = true;
+
+    @Column(nullable = false, unique = true)
+    private String login;
+
+    @Column(nullable = false)
+    private String senha;
 }
+
+

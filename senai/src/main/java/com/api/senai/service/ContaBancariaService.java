@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.api.senai.classes.ContaBancaria;
 import com.api.senai.classes.Transacao;
-import com.api.senai.repository.*;
+
 
 
 
